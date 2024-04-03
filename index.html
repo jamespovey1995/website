@@ -8,13 +8,15 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <link rel="icon" href="GS favicon.png" type="image/png">
     <style>
-      .darkblue {
+      .boldblue {
         color: #10386b;
+        font-weight: bold;
+        font-size: 26px;
       }
-      .paleblue {
-        color: #91e9d0;
+      .smallblue {
+        color: #10386b;
+        font-size: 12px;
       }
       @media (max-width: 640px) {
         .bg-no-repeat {
@@ -40,17 +42,24 @@
       <div class="mt-10 md:mt-20 lg:mt-32 xl:mt-40 flex-grow-0 text-center">
         <!-- Logo image with class for styling -->
         <img src="GradScale.png" alt="GradScale Logo" class="logo-image mb-8" />
-        <hr class="w-full darkblue mb-2" />
-        <h2 class="text-2xl mb-8 darkblue">
+        <hr class="w-full boldblue mb-2" />
+        <h2 class="text-2xl mb-8 boldblue">
           The graduate scheme for the scaleup ecosystem
         </h2>
+        <!-- Visible div for the email line in pale blue color -->
+        <div class="text-center mb-4 smallblue">
+          To get in touch or apply with a CV please email
+          <a href="mailto:careers@gradscale.co.uk" class="underline"
+            >careers@gradscale.co.uk</a
+          >
+        </div>
       </div>
       <div class="flex-grow flex items-center">
         <button
           id="scrollButton"
           class="py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"
         >
-          Interested? Get in touch
+          Interested? Subscribe Here
         </button>
       </div>
       <div id="googleForm" class="w-full mx-auto hidden">
@@ -64,8 +73,7 @@
           webkitallowfullscreen
           mozallowfullscreen
           msallowfullscreen
-        >
-        </iframe>
+        ></iframe>
       </div>
       <div class="mb-4 text-gray-500">©️ GradScale 2024</div>
     </div>
@@ -73,10 +81,11 @@
       document
         .getElementById("scrollButton")
         .addEventListener("click", function () {
-          this.style.display = "none"; // Makes the button invisible
+          this.style.display = "none"; // Hides the button
           const form = document.getElementById("googleForm");
-          form.style.display = "block"; // Makes the form visible
+          form.style.display = "block"; // Shows the form
         });
     </script>
   </body>
 </html>
+
