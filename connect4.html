@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rent My Baby Gear</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css"
+    />
+    <style>
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background-color: #fafafa;
+        line-height: 1.6;
+      }
+      .navbar,
+      .get-in-touch {
+        background-color: #343a40;
+        color: #ffffff;
+        padding: 10px 20px;
+        text-align: center;
+      }
+      .navbar select,
+      .navbar input,
+      .navbar button {
+        margin: 0 5px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      .navbar button {
+        background-color: #ffd700;
+        border: none;
+        cursor: pointer;
+      }
+      .content,
+      .filters {
+        margin: 20px;
+        text-align: center;
+      }
+      .product {
+        background-color: #ffffff;
+        margin: 10px auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        width: calc(33.333% - 20px);
+        display: inline-block;
+      }
+      .product img {
+        width: 100%;
+        height: auto;
+      }
+      .product-info {
+        padding: 15px;
+      }
+      .slider {
+        max-width: 400px;
+        margin: 20px auto;
+      }
+      @media (max-width: 960px) {
+        .product {
+          width: calc(50% - 20px);
+        }
+      }
+      @media (max-width: 600px) {
+        .product,
+        .slider {
+          width: calc(100% - 40px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <select id="ageSelect">
+        <option value="">Select by Age</option>
+        <option value="0-6">0-6 Months</option>
+        <option value="7-12">7-12 Months</option>
+        <option value="1-2">1-2 Years</option>
+        <option value="3+">3+ Years</option>
+      </select>
+      <input type="text" placeholder="Search..." />
+      <button>Search</button>
+    </div>
+
+    <div class="filters">
+      <div id="priceRange" class="slider"></div>
+      <select id="sortBy">
+        <option value="low-high">Price: Low to High</option>
+        <option value="high-low">Price: High to Low</option>
+        <option value="newest">Newest Arrivals</option>
+      </select>
+    </div>
+
+    <div class="content">
+      <div class="product">
+        <img src="image 1.jpeg" alt="Baby Stroller" />
+        <div class="product-info">
+          <h2>Baby Stroller</h2>
+        </div>
+      </div>
+      <div class="product">
+        <img src="image 2.jpeg" alt="Cot" />
+        <div class="product-info">
+          <h2>Cot</h2>
+        </div>
+      </div>
+      <div class="product">
+        <img src="image 3.jpeg" alt="Breast Pump" />
+        <div class="product-info">
+          <h2>Breast Pump</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="get-in-touch">
+      <h2>Get in Touch</h2>
+      <p>
+        Interested in our products or have questions?
+        <a href="mailto:contact@rentmybabygear.com" style="color: #ffd700"
+          >Email us</a
+        >
+      </p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
+    <script>
+      var slider = document.getElementById("priceRange");
+
+      noUiSlider.create(slider, {
+        start: [20, 80],
+        connect: true,
+        range: {
+          min: 0,
+          max: 100,
+        },
+      });
+
+      slider.noUiSlider.on("update", function (values, handle) {
+        console.log("Price range: ", values.map(Math.round));
+      });
+    </script>
+  </body>
+</html>

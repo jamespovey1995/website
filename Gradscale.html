@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GradScale</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .darkblue {
+        color: #10386b;
+      }
+      .paleblue {
+        color: #91e9d0;
+      }
+      @media (max-width: 640px) {
+        .bg-no-repeat {
+          background-repeat: no-repeat;
+          background-position: bottom right;
+          background-size: 200%;
+        }
+      }
+      /* Logo image styles */
+      .logo-image {
+        width: 200%; /* Adjust the width as needed */
+        max-width: 500px; /* Maximum width */
+        display: block; /* This makes margin auto effective */
+        margin: 0 auto; /* This centers the image */
+      }
+    </style>
+  </head>
+  <body
+    class="pt-0 mt-0 bg-no-repeat bg-cover bg-fixed"
+    style="background-image: url('Background.png')"
+  >
+    <div class="flex flex-col items-center min-h-screen text-white">
+      <div class="mt-10 md:mt-20 lg:mt-32 xl:mt-40 flex-grow-0 text-center">
+        <!-- Logo image with class for styling -->
+        <img src="GradScale.png" alt="GradScale Logo" class="logo-image mb-8" />
+        <hr class="w-full darkblue mb-2" />
+        <h2 class="text-2xl mb-8 darkblue">
+          The graduate scheme for the scaleup ecosystem
+        </h2>
+      </div>
+      <div class="flex-grow flex items-center">
+        <button
+          id="scrollButton"
+          class="py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"
+        >
+          Interested? Get in touch
+        </button>
+      </div>
+      <div id="googleForm" class="w-full mx-auto hidden">
+        <iframe
+          class="h-screen w-full"
+          src="https://forms.office.com/Pages/ResponsePage.aspx?id=nj5i6j_0WEutrluMjBjRBr1fR1u0WEBApj7jgAwcjoFUNkRDSk84WlBVOVJLVk9ITTJBNDNXTTYxUi4u&embed=true"
+          frameborder="0"
+          marginwidth="0"
+          marginheight="0"
+          allowfullscreen
+          webkitallowfullscreen
+          mozallowfullscreen
+          msallowfullscreen
+        >
+        </iframe>
+      </div>
+      <div class="mb-4 text-gray-500">©️ GradScale 2024</div>
+    </div>
+    <script>
+      document
+        .getElementById("scrollButton")
+        .addEventListener("click", function () {
+          this.style.display = "none"; // Makes the button invisible
+          const form = document.getElementById("googleForm");
+          form.style.display = "block"; // Makes the form visible
+        });
+    </script>
+  </body>
+</html>
